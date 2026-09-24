@@ -1,6 +1,6 @@
 export const SITE = {
-  instagram: "https://instagram.com/malicknoir",
-  instagramHandle: "@malicknoir",
+  instagram: "https://instagram.com/malicknoirr",
+  instagramHandle: "@malicknoirr",
   contactEmail: "hello@malicknoir.com",
 };
 
