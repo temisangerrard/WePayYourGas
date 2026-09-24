@@ -36,7 +36,7 @@ export default function ProductDetail() {
 
         <div className="mt-6 grid md:grid-cols-2 gap-12">
           <div className="bg-parchment aspect-square overflow-hidden">
-            <img src={product.image} alt={product.title} className="w-full h-full object-cover" />
+            <img src={product.image} alt={product.title} className="w-full h-full object-contain" />
           </div>
           <BuyPanel product={product} />
         </div>

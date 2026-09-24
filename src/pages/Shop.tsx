@@ -2,7 +2,6 @@ import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import TrustBar from "../components/TrustBar";
 import ProductCard from "../components/ProductCard";
 import { products } from "../data/products";
 
@@ -25,12 +24,11 @@ export default function Shop() {
       <Nav />
       <div className="pt-24 max-w-6xl mx-auto px-5">
         <p className="text-xs uppercase tracking-[0.15em] text-clay font-semibold mb-2">
-          Available Prints
+          malicknoir
         </p>
-        <h1 className="font-serif text-4xl mb-2">Shop the Archive</h1>
+        <h1 className="font-serif text-4xl mb-2">Prints</h1>
         <p className="text-stone max-w-xl">
-          Small-batch prints from malicknoir's photography and artwork — printed to order,
-          signed, and shipped worldwide.
+          Artwork and photography. Select a print to see sizes and prices.
         </p>
 
         <div className="flex gap-3 mt-8">
@@ -57,7 +55,6 @@ export default function Shop() {
         ))}
       </div>
 
-      <TrustBar />
       <Footer />
     </div>
   );

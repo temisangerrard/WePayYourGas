@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Product } from "../data/products";
-import { buildFallbackMailto } from "../config/site";
+import { SITE, buildFallbackMailto } from "../config/site";
 
 export default function BuyPanel({ product }: { product: Product }) {
   const [sizeIndex, setSizeIndex] = useState(0);
@@ -10,10 +10,10 @@ export default function BuyPanel({ product }: { product: Product }) {
   return (
     <div>
       <p className="text-xs uppercase tracking-[0.15em] text-clay font-semibold mb-2">
-        {product.edition}
+        {product.category}
       </p>
       <h1 className="font-serif text-4xl leading-tight mb-3">{product.title}</h1>
-      <p className="text-stone italic mb-8">"{product.quote}"</p>
+      <p className="text-stone italic mb-8">{product.quote}</p>
 
       <p className="text-xs uppercase tracking-[0.15em] text-stone mb-2">Size</p>
       <div className="grid gap-2 mb-8">
@@ -39,20 +39,17 @@ export default function BuyPanel({ product }: { product: Product }) {
         rel={hasLiveCheckout ? "noreferrer" : undefined}
         className="block w-full text-center bg-clay text-cream font-semibold uppercase tracking-[0.1em] text-sm py-4 hover:bg-clay/90 transition"
       >
-        {hasLiveCheckout ? `Buy Now — £${size.price}` : "Reserve This Print"}
+        {hasLiveCheckout ? `Buy now — £${size.price}` : "Enquire about this print"}
       </a>
       {!hasLiveCheckout && (
         <p className="text-xs text-stone mt-2">
-          Checkout opens your email pre-filled to confirm the order directly with malicknoir.
+          {SITE.contactEmail
+            ? "Opens an email with your print and size."
+            : `Message ${SITE.instagramHandle} on Instagram about ${product.title} (${size.label}).`}
+          {" "}Confirm availability and delivery before paying. Prices shown are a guide.
         </p>
       )}
 
-      <ul className="mt-8 space-y-2 text-sm text-stone border-t border-ink/10 pt-6">
-        <li>✓ Printed to order on museum-grade paper</li>
-        <li>✓ Signed by malicknoir</li>
-        <li>✓ Ships worldwide, tracked</li>
-        <li>✓ Secure checkout</li>
-      </ul>
     </div>
   );
 }

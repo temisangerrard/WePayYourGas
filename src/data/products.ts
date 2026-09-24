@@ -10,9 +10,9 @@ export type Size = {
   label: string;
   price: number;
   /**
-   * Paste a Stripe Payment Link (or Gumroad/Lemon Squeezy link) here once
-   * it's created for this size. Leave empty to show a "Notify me" fallback
-   * instead of a broken checkout button.
+   * Paste a Paystack product checkout link here once
+   * its price, currency and delivery settings match this size. Leave empty for enquiries
+   * until checkout is ready.
    */
   paymentLink: string;
 };
@@ -23,7 +23,6 @@ export type Product = {
   quote: string;
   category: "Artwork" | "Photography";
   image: string;
-  edition: string;
   sizes: Size[];
 };
 
@@ -34,7 +33,6 @@ export const products: Product[] = [
     quote: "I have a lot to do today, but how I choose to do it is up to me.",
     category: "Artwork",
     image: upToMe,
-    edition: "Small-batch run · signed",
     sizes: [
       { label: '8" × 11"', price: 25, paymentLink: "" },
       { label: '12" × 16"', price: 50, paymentLink: "" },
@@ -46,7 +44,6 @@ export const products: Product[] = [
     quote: "Did you see the changes the butterfly went through to become beautiful?",
     category: "Artwork",
     image: theButterfly,
-    edition: "Small-batch run · signed",
     sizes: [
       { label: '8" × 11"', price: 25, paymentLink: "" },
       { label: '12" × 16"', price: 50, paymentLink: "" },
@@ -58,7 +55,6 @@ export const products: Product[] = [
     quote: "Everything good will come. — Sefi Atta",
     category: "Artwork",
     image: everythingGood,
-    edition: "Small-batch run · signed",
     sizes: [
       { label: '8" × 11"', price: 25, paymentLink: "" },
       { label: '12" × 16"', price: 50, paymentLink: "" },
@@ -70,7 +66,6 @@ export const products: Product[] = [
     quote: "What a beautiful thing it is to still have space to grow after everything we've been through.",
     category: "Artwork",
     image: spaceToGrow,
-    edition: "Small-batch run · signed",
     sizes: [
       { label: '8" × 11"', price: 25, paymentLink: "" },
       { label: '12" × 16"', price: 50, paymentLink: "" },
@@ -82,7 +77,6 @@ export const products: Product[] = [
     quote: "“And I cried… for all the women who stretched their bodies for civilizations, only to find ruins.” — Sonia Sanchez",
     category: "Artwork",
     image: landscapes,
-    edition: "Small-batch run · signed",
     sizes: [
       { label: '8" × 11"', price: 25, paymentLink: "" },
       { label: '12" × 16"', price: 50, paymentLink: "" },
@@ -94,7 +88,6 @@ export const products: Product[] = [
     quote: "Some endings make room for better beginnings.",
     category: "Photography",
     image: someEndings,
-    edition: "Fine-art photo print",
     sizes: [
       { label: '8" × 11"', price: 45, paymentLink: "" },
       { label: '16" × 20"', price: 95, paymentLink: "" },
@@ -106,7 +99,6 @@ export const products: Product[] = [
     quote: "On finding light in the dark.",
     category: "Photography",
     image: layla,
-    edition: "Fine-art photo print",
     sizes: [
       { label: '8" × 11"', price: 75, paymentLink: "" },
       { label: '16" × 20"', price: 150, paymentLink: "" },
