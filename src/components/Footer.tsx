@@ -8,7 +8,7 @@ export default function Footer() {
         <div>
           <p className="font-serif text-xl text-cream mb-2">malicknoir</p>
           <p className="text-sm max-w-xs">
-            Words, images, and film — gathered slowly, now available as prints for your walls.
+            Art and photography prints.
           </p>
         </div>
         <div className="text-sm">
@@ -32,23 +32,23 @@ export default function Footer() {
           </ul>
         </div>
         <div className="text-sm">
-          <p className="uppercase tracking-[0.15em] text-xs text-cream mb-3">Say hello</p>
+          <p className="uppercase tracking-[0.15em] text-xs text-cream mb-3">Contact</p>
           <ul className="space-y-2">
             <li>
               <a href={SITE.instagram} target="_blank" rel="noreferrer" className="hover:text-cream transition">
                 {SITE.instagramHandle}
               </a>
             </li>
-            <li>
+            {SITE.contactEmail && <li>
               <a href={`mailto:${SITE.contactEmail}`} className="hover:text-cream transition">
                 {SITE.contactEmail}
               </a>
-            </li>
+            </li>}
           </ul>
         </div>
       </div>
       <div className="border-t border-white/10 text-xs text-center py-5">
-        © {new Date().getFullYear()} malicknoir. All prints made to order.
+        © {new Date().getFullYear()} malicknoir.
       </div>
     </footer>
   );
